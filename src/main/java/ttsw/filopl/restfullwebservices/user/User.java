@@ -1,6 +1,11 @@
 package ttsw.filopl.restfullwebservices.user;
 
+import jakarta.persistence.Id;
+import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.Size;
+
 import java.util.Date;
+
 
 /**
  * Created by T. Filo Zegarlicki on 08.06.2022
@@ -8,8 +13,12 @@ import java.util.Date;
 
 
 public class User {
+
+    @Id
     private Integer id;
+    @Size(min=2, message="Name should have atleast 2 characters")
     private String name;
+    @Past
     private Date birthDate;
 
     protected User() {
@@ -45,4 +54,10 @@ public class User {
     public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
     }
+
+    @Override
+    public String toString() {
+        return String.format("User [id=%s, name=%s, birthDate=%s]", id, name, birthDate);
+    }
+
 }
