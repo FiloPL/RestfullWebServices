@@ -1,6 +1,6 @@
 package ttsw.filopl.restfullwebservices.exception;
 
-import javax.xml.crypto.Data;
+import java.util.Date;
 
 /**
  * Created by T. Filo Zegarlicki on 09.06.2022
@@ -8,22 +8,22 @@ import javax.xml.crypto.Data;
 
 public class ExceptionResponse {
 
-    private Data timestamp;
+    private Date timestamp;
     private String message;
     private String details;
 
-    public ExceptionResponse(Data timestamp, String message, String details) {
+    public ExceptionResponse(Date timestamp, String message, String details) {
         super();
         this.timestamp = timestamp;
         this.message = message;
         this.details = details;
     }
 
-    public Data getTimestamp() {
+    public Date getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(Data timestamp) {
+    public void setTimestamp(Date timestamp) {
         this.timestamp = timestamp;
     }
 
