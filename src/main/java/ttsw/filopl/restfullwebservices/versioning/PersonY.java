@@ -8,6 +8,12 @@ public class PersonY {
     private Name name;
 
     public PersonY() {
+        super();
+    }
+
+    public PersonY(Name name) {
+        super();
+        this.name = name;
     }
 
     public Name getName() {
