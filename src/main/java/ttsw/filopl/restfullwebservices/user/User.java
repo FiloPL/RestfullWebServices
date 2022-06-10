@@ -1,8 +1,10 @@
 package ttsw.filopl.restfullwebservices.user;
 
-import jakarta.persistence.Id;
+
 import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Size;
+import org.springframework.data.annotation.Id;
+
 
 import java.util.Date;
 
