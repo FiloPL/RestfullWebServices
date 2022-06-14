@@ -1,4 +1,4 @@
-package ttsw.filopl.restfullwebservices.user;
+package ttsw.filopl.restfullwebservices.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

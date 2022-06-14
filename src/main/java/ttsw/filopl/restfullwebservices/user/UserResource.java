@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+import ttsw.filopl.restfullwebservices.exception.UserNotFoundException;
 
 /**
  * Created by T. Filo Zegarlicki on 08.06.2022
