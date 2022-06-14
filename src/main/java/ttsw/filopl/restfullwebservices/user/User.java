@@ -1,27 +1,42 @@
 package ttsw.filopl.restfullwebservices.user;
 
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Size;
-import org.springframework.data.annotation.Id;
 
+//import io.swagger.annotations.ApiModel;
+//import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Date;
+import java.util.List;
 
 
 /**
  * Created by T. Filo Zegarlicki on 08.06.2022
  **/
 
-
+//@ApiModel(description="All details about the user.")
+@Entity
 public class User {
 
     @Id
+    @GeneratedValue
     private Integer id;
+
     @Size(min=2, message="Name should have atleast 2 characters")
+  //  @ApiModelProperty(notes="Name should have atleast 2 characters")
     private String name;
+
     @Past
+//    @ApiModelProperty(notes="Birth date should be in the past")
     private Date birthDate;
+
+    @OneToMany(mappedBy="user")
+    private List<Post> posts;
 
     protected User() {
     }
@@ -56,6 +71,15 @@ public class User {
     public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
     }
+
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
+    }
+
 
     @Override
     public String toString() {
